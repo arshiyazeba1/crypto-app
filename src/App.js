@@ -6,7 +6,6 @@ function App() {
 
 // Setting up the initial states using
 // react hook 'useState'
-const [search, setSearch] = useState("");
 const [crypto, setCrypto] = useState([]);
 
 // Fetching crypto data from the API only
@@ -21,14 +20,8 @@ useEffect(() => {
 
 return (
 	<div className="App">
-	<h1>All Cryptocurrencies</h1>
-	<input
-		type="text"
-		placeholder="Search..."
-		onChange={(e) => {
-		setSearch(e.target.value);
-		}}
-	/>
+	<h1>CRYPTO CURRENCY DASHBOARD</h1>
+
 	<table>
 		<thead>
 		<tr>
@@ -37,17 +30,17 @@ return (
 			<td>Symbol</td>
 			<td>Market Cap</td>
 			<td>Price</td>
-			<td>Available Supply</td>
 			<td>Volume(24hrs)</td>
+			<td>Price Change(1hr)</td>
+			<td>Price Change(1d)</td>
+			<td>Price Change(1w)</td>
+			<td></td>
 		</tr>
 		</thead>
 		{/* Mapping all the cryptos */}
 		<tbody>
 		{/* Filtering to check for the searched crypto */}
 		{crypto
-			.filter((val) => {
-			return val.name.toLowerCase().includes(search.toLowerCase());
-			})
 			.map((val, id) => {
 			return (
 				<>
@@ -64,8 +57,10 @@ return (
 					<td className="symbol">{val.symbol}</td>
 					<td>₹{val.marketCap}</td>
 					<td>₹{val.price.toFixed(2)}</td>
-					<td>{val.availableSupply}</td>
 					<td>{val.volume}</td>
+					<td>{val.priceChange1h}</td>
+					<td>{val.priceChange1d}</td>
+					<td>{val.priceChange1w}</td>
 				</tr>
 				</>
 			);
