@@ -13,7 +13,7 @@ const [crypto, setCrypto] = useState([]);
 // once when the component is mounted
 useEffect(() => {
 	Axios.get(
-`https://api.coinstats.app/public/v1/coins?skip=0&limit=100&currency=INR`
+`https://api.coinstats.app/public/v1/coins?skip=0&limit=100&currency=USD`
 	).then((res) => {
 	setCrypto(res.data.coins);
 	});
@@ -63,8 +63,8 @@ return (
 					<p>{val.name}</p>
 					</td>
 					<td className="symbol">{val.symbol}</td>
-					<td>₹{val.marketCap}</td>
-					<td>₹{val.price.toFixed(2)}</td>
+					<td>${val.marketCap}</td>
+					<td>${val.price.toFixed(2)}</td>
 					<td>{val.volume}</td>
  					<td>{val.priceChange1h}</td>
                                     	<td>{val.priceChange1d}</td>
