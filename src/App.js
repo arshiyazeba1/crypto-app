@@ -67,7 +67,7 @@ return (
 					<td>${val.marketCap.toFixed(2)}</td>
 					<td>${val.price.toFixed(2)}</td>
 					<td>₹{val.price.toFixed(2) / 77.46}</td>
-					<td>{val.volume.toFixed(2)}</td>
+					<td>{val.volume}</td>
  					<td>{val.priceChange1h}</td>
                                     	<td>{val.priceChange1d}</td>
                                    	<td>{val.priceChange1w}</td>
