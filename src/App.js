@@ -22,6 +22,7 @@ useEffect(() => {
 return (
 	<div className="App">
 	<h1>CRYPTO CURRENCY DASHBOARD</h1>
+	<h2>1$ = 77.46₹</h2>
 	<input
 		type="text"
 		placeholder="Search..."
@@ -66,7 +67,7 @@ return (
 					<td className="symbol">{val.symbol}</td>
 					<td>${val.marketCap.toFixed(2)}</td>
 					<td>${val.price.toFixed(2)}</td>
-					<td>₹{val.price.toFixed(2) / 77.46}</td>
+					<td>₹{val.price.toFixed(2) * 77.46.toFixed(2)}</td>
 					<td>{val.volume}</td>
  					<td>{val.priceChange1h}</td>
                                     	<td>{val.priceChange1d}</td>
