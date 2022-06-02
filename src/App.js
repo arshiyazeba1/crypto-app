@@ -36,7 +36,8 @@ return (
 			<td>Name</td>
 			<td>Symbol</td>
 			<td>Market Cap</td>
-			<td>Price</td>
+			<td>Price($)</td>
+			<td>Price(₹)</td>
 			<td>Volume(24hrs)</td>
 			<td>Price Change(1hr)</td>
                    	<td>Price Change(1d)</td>
@@ -63,9 +64,10 @@ return (
 					<p>{val.name}</p>
 					</td>
 					<td className="symbol">{val.symbol}</td>
-					<td>${val.marketCap}</td>
+					<td>${val.marketCap.toFixed(2)}</td>
 					<td>${val.price.toFixed(2)}</td>
-					<td>{val.volume}</td>
+					<td>₹{val.price.toFixed(2) / 77.46}</td>
+					<td>{val.volume.toFixed(2)}</td>
  					<td>{val.priceChange1h}</td>
                                     	<td>{val.priceChange1d}</td>
                                    	<td>{val.priceChange1w}</td>
